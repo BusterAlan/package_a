@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:package_a/pages/detail_page.dart';
+import 'package:package_a/routes/package_a_router.gr.dart';
 
+@RoutePage()
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -16,7 +18,7 @@ class HomePage extends StatelessWidget {
     ),
   );
 
-  void _onPressed(BuildContext context) => Navigator.of(
-    context,
-  ).push(MaterialPageRoute(builder: (context) => const DetailPage()));
+  void _onPressed(BuildContext context) => context.router.push(
+    const DetailRoute(),
+  );
 }
